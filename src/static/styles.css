@@ -30,15 +30,26 @@ header h1 {
 
 main {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 30px;
   justify-content: center;
 }
 
 @media (min-width: 768px) {
   main {
-    grid-template-columns: 2fr 1fr;
+    flex-direction: column;
+    align-items: center;
   }
+}
+
+#signup-container {
+  order: 1;
+  margin-bottom: 0;
+}
+
+#activities-container {
+  order: 2;
+  margin-top: 30px;
 }
 
 section {
@@ -186,6 +197,44 @@ button:hover {
   background-color: #d1ecf1;
   color: #0c5460;
   border: 1px solid #bee5eb;
+}
+
+.info-message {
+  background: #e3fcec;
+  color: #197935;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.register-btn {
+  background-color: #197935;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.register-btn:hover {
+  background-color: #145c28;
+}
+
+@media (max-width: 600px) {
+  .activity-card,
+  section {
+    max-width: 100%;
+    padding: 10px;
+  }
+  .register-btn {
+    width: 100%;
+    font-size: 1.1rem;
+  }
 }
 
 .hidden {
